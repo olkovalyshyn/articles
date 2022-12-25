@@ -1,6 +1,6 @@
-<form class="setArticle-form" action='" . setArticle() . "' method="post">
+<form class="setArticle-form" action='../model/articles/articleSet.php' method="post">
   <input type="hidden" name="id" />
-  <input type='hidden' name='login' value=" . $_COOKIE['user'] . ">
+  <input type='hidden' name='login' value="$_COOKIE['user']">
   <textarea
     class="setArticle-text"
     name="article"
