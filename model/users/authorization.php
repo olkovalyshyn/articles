@@ -10,11 +10,10 @@ $sql = "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$passwo
 $result = $connect->query($sql);
 
 $authuser = $result->fetch_assoc();
+// echo "!!!!!!" . $authuser;
 
-if (count($authuser) == 0) {
-    include "../view/userNotFound.html";
-    // echo "<h2>User with login $login not found!</h2>";
-    exit();
+if (isset($authuser)) {
+    include "../../view/userNotFound.html";
 }
 
 setcookie('user', $authuser['login'], time() + 3600 * 24, "/");

@@ -1,0 +1,55 @@
+.setArticle-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.setArticle-text {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.setArticle-btn,
+.setComment-btn {
+    cursor: pointer;
+}
+
+.setArticle-btn:hover,
+.setComment-btn:hover {
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    background-color: rgb(187, 187, 187);
+}
+
+.article-section {
+    background-color: rgba(173, 114, 114, 0.411);
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.article-text{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.flex-container {
+    background-color: rgb(189, 189, 189);
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 1px;
+}
+
+.condition {
+    color: rgb(214, 59, 59);
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+

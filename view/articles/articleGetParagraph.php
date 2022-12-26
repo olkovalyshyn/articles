@@ -1,0 +1,1 @@
+<p class="article-text"> <?= $row["article"] ?> </p>

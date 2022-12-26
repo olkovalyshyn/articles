@@ -6,17 +6,25 @@ $sql = "SELECT * FROM `news`";
 $result = $connect->query($sql);
 
 while ($row = $result->fetch_assoc()) {
-    echo "<p>{$row["article"]}</p>";
+?>
+    <div class='flex-container'>
 
-    include "./view/articles/articleEditButton.php";
-    include "./view/articles/articleDeleteButton.php";
+        <?php
+        include "./view/articles/articleGetParagraph.php";
+        include "./view/articles/articleEditButton.php";
+        include "./view/articles/articleDeleteButton.php";
+        // include "./model/comments/commentGet.php";
 
-    include "./model/comments/commentAdd.php";
+        ?>
 
+    </div>
+
+<?php
+    include "./view/comments/commentAddForm.php";
     // include "./model/comments/commentGet.php";
 
-    // require "print.php";
-    // $text = new PrintText();
-    // $text->articlePrint($row["article"]);
+
 }
 $connect->close();
+
+?>

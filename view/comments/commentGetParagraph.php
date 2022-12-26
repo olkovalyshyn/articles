@@ -1,0 +1,1 @@
+<p class=""> <?= $row["comment"] ?> </p>

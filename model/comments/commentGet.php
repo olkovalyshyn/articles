@@ -25,5 +25,9 @@
 
 
     while ($row = $result->fetch_assoc()) {
-        echo "<p>{$row["comment"]}</p>";
+        // echo "<p>!!!THIS IS A COMMENT!!!</p>";
+
+        // echo "<p>{$row["comment"]}</p>";
+        include "./view/comments/commentGetParagraph.php";
     }
+    // $connect->close();
