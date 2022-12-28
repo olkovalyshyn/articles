@@ -19,9 +19,9 @@
 
     // $id = $_POST['article_id'];
 
-    $connect = new mysqli('localhost', 'root', '', 'news-php');
+    $pdo = new mysqli('localhost', 'root', '', 'news-php');
     $sql = "SELECT * FROM `comments`";
-    $result = $connect->query($sql);
+    $result = $pdo->query($sql);
 
 
     while ($row = $result->fetch_assoc()) {

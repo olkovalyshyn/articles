@@ -21,7 +21,8 @@
 
 
     include "./controller/showArticleAdd.php";
-    include "./model/articles/articleGet.php";
+    include "./controller/articleShowTEST.php"
+    // include "./model/articles/articleGet.php";
 
     ?>
 

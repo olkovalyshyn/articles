@@ -11,11 +11,11 @@
         // echo $article;
         // echo $comment;
 
-        $connect = new mysqli('localhost', 'root', '', 'news-php');
+        $pdo = new mysqli('localhost', 'root', '', 'news-php');
         $sql = "INSERT INTO `comments` (`article_id`, `login`, `article`, `comment`) VALUE ('$article_id', '$login', '$article', '$comment')";
-        $result = $connect->query($sql);
+        $result = $pdo->query($sql);
 
-        $connect->close();
+        $pdo->close();
     }
 
     header('Location: /');

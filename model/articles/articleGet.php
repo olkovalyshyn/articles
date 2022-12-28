@@ -1,30 +1,43 @@
 <?php
-// require "./articlePrint.php";
 
-$connect = new mysqli('localhost', 'root', '', 'news-php');
-$sql = "SELECT * FROM `news`";
-$result = $connect->query($sql);
+class Article
+{
+    private $connect;
 
-while ($row = $result->fetch_assoc()) {
+    public function __construct($pdo)
+    {
+        $this->connect = $pdo;
+    }
+
+    public function articleGet()
+    {
+        $sql = "SELECT * FROM `news` ORDER BY `date` DESC";
+        $result = $this->connect->query($sql)->fetchAll();
+        return $result;
+    }
+}
+
+
+// $pdo = new mysqli('localhost', 'root', '', 'news-php');
+// $sql = "SELECT * FROM `news` ORDER BY `date` DESC";
+// $result = $pdo->query($sql);
+
+
+// while ($row = $result->fetch_assoc()) {
 ?>
-    <div class='flex-container'>
-
-        <?php
-        include "./view/articles/articleGetParagraph.php";
-        include "./view/articles/articleEditButton.php";
-        include "./view/articles/articleDeleteButton.php";
-        // include "./model/comments/commentGet.php";
-
-        ?>
-
-    </div>
+<!-- <div class='flex-container'> -->
 
 <?php
-    include "./view/comments/commentAddForm.php";
-    // include "./model/comments/commentGet.php";
+// include "./view/articles/articleGetParagraph.php";
+// include "./view/articles/articleEditButton.php";
+// include "./view/articles/articleDeleteButton.php";
 
+?>
 
-}
-$connect->close();
+<!-- </div> -->
+
+<?php
+// include "./view/comments/commentAddForm.php";
+// }
 
 ?>
