@@ -12,8 +12,5 @@
         $article = new ArticleEdit($pdo);
         $article->edit($id, $login, $article);
 
-        // $sql = $pdo->prepare("UPDATE `news` SET `article`=:article WHERE `id` = '$id' AND `login` = '$login'");
-        // $params = ['article' => $article];
-        // $sql->execute($params);
         header("Location: /");
     }

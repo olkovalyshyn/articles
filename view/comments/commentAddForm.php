@@ -6,13 +6,4 @@
   <button class="setComment-btn" type="submit" name="submitSetComment">
     Add comment
   </button>
-
-  <?php
-  // include "./model/comments/commentGet.php";
-  ?>
-
-  <?php
-  // echo "<h1>This is a comment</h1>";
-  ?>
-
 </form>

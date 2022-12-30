@@ -3,6 +3,5 @@
     <input type='hidden' name='loginWhichAddArticle' value="<?= $item['login'] ?>">
     <input type='hidden' name='article' value="<?= $item['article'] ?>">
 
-    <!-- <textarea type='hidden' class='auth-item' name='article'>" .  $article . "</textarea> -->
     <button class='auth-btn' type='submit' name='submitEditArticle'>Edit article</button>
 </form>

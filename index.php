@@ -13,16 +13,13 @@
 
     <header class="header">
         <?php
-        include "./controller/headerController.php";
+        include "./controller/users/headerController.php";
         ?>
     </header>
 
     <?php
-
-
     include "./controller/showArticleAdd.php";
     include "./controller/articleShow.php"
-
     ?>
 
 </body>

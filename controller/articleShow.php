@@ -9,16 +9,11 @@ $listArticles = $article->get();
 
 <div class='flex-container'>
     <?php
-    // echo $result;
-    foreach ($listArticles as $item)
-    // while ($item = mysqli_fetch_assoc($result)) 
-    {
+    foreach ($listArticles as $item) {
         include "./view/articles/articleGetParagraph.php";
         include "./view/articles/articleEditButton.php";
         include "./view/articles/articleDeleteButton.php";
         include "./view/comments/commentAddForm.php";
-
-        // echo $item["article"] . "<br>";
     }
     ?>
 </div>

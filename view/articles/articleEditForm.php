@@ -1,11 +1,3 @@
-<!-- <?php
-        // $id = $_POST['id'];
-        // $loginWhichAddArticle = $_POST['loginWhichAddArticle'];
-        // $article = $_POST['article'];
-        // echo $article;
-        // echo $loginWhichAddArticle;
-        ?> -->
-
 <h2>Edit article</h2>
 <form class='auth-form' action="../../controller/articleEdit.php" method='post'>
     <input type='hidden' name='id' value=<?= $_POST['id'] ?>>
