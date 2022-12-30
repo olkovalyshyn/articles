@@ -1,21 +1,15 @@
     <?php
-    class CommentGet
-    {
-        private $connect;
+    include "../../connect/connect.php";
+    include "../../model/comments/commentGet.php";
 
-        public function __construct($pdo)
-        {
-            $this->connect = $pdo;
-        }
+    while ($row = $result->fetch_assoc()) {
+        // echo "<p>!!!THIS IS A COMMENT!!!</p>";
 
-        public function get()
-        {
-            $sql = "SELECT * FROM `comment` ORDER BY `date` DESC";
-            $result = $this->connect->prepare($sql);
-            $result->execute();
-            return $result->fetchAll();
-        }
+        // echo "<p>{$row["comment"]}</p>";
+        // include "./view/comments/commentGetParagraph.php";
+        include "../../view/comments/commentGetParagraph.php";
     }
+
     // if (isset($_POST["submitSetComment"]) && isset($_COOKIE['user'])) {
 
     //     $id = $_POST['article_id'];

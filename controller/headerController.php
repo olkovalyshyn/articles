@@ -1,6 +1,7 @@
 <?php
 include "./view/users/headerLogo.html";
 ?>
+
 <div class="log">
     <?php
     if ($_COOKIE["user"] == "") {

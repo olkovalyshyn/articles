@@ -1,4 +1,4 @@
-<form class="setComment-form" action="./model/comments/commentSet.php" method="post">
+<form class="setComment-form" action="./controller/comments/commentSet.php" method="post">
   <input type="hidden" name="article_id" value="<?= $row['id'] ?>" />
   <input type='hidden' name='login' value="<?= $_COOKIE['user'] ?>">
   <input type='hidden' name='article' value="<?= $row['article'] ?>">

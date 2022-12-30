@@ -1,6 +1,6 @@
 <?php
 
-class Article
+class ArticleGet
 {
     private $connect;
 
@@ -9,35 +9,11 @@ class Article
         $this->connect = $pdo;
     }
 
-    public function articleGet()
+    public function get()
     {
         $sql = "SELECT * FROM `news` ORDER BY `date` DESC";
-        $result = $this->connect->query($sql)->fetchAll();
-        return $result;
+        $result = $this->connect->prepare($sql);
+        $result->execute();
+        return $result->fetchAll();
     }
 }
-
-
-// $pdo = new mysqli('localhost', 'root', '', 'news-php');
-// $sql = "SELECT * FROM `news` ORDER BY `date` DESC";
-// $result = $pdo->query($sql);
-
-
-// while ($row = $result->fetch_assoc()) {
-?>
-<!-- <div class='flex-container'> -->
-
-<?php
-// include "./view/articles/articleGetParagraph.php";
-// include "./view/articles/articleEditButton.php";
-// include "./view/articles/articleDeleteButton.php";
-
-?>
-
-<!-- </div> -->
-
-<?php
-// include "./view/comments/commentAddForm.php";
-// }
-
-?>

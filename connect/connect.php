@@ -9,4 +9,19 @@
 
        $pdo = new PDO($dsn, $username, $password);
 
-// $connect = new PDO('mysql:host=localhost; dbname=news-php', 'root', '');
+       // $pdo = new mysqli($host, $username, $password, $dbname);
+       
+
+       // $connect = new PDO($dsn, $username, $password);
+
+       // $connect = new PDO('mysql:host=localhost; dbname=news-php', 'root', '');
+       
+       // class ConnectDb
+       // {
+       //        private $connect;
+
+       //        public function __construct($pdo)
+       //        {
+       //               $this->connect = $pdo;
+       //        }
+       // }

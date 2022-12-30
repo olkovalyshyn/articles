@@ -1,19 +1,19 @@
     <?php
 
-    if (isset($_POST["submitUpdateArticle"]) && isset($_COOKIE['user'])) {
-        $id = $_POST['id'];
-        $login = $_POST['login'];
-        $article = $_POST['article'];
-        $article = htmlspecialchars($article);
+    class ArticleEdit
+    {
+        private $connect;
 
-        // $connect = new mysqli('localhost', 'root', '', 'news-php');
-        // $sql = "UPDATE `news` SET `article`='$article' WHERE `id` = '$id' AND `login` = '$login'";
-        // $result = $connect->query($sql);
-        // $connect->close();
+        public function __construct($pdo)
+        {
+            $this->connect = $pdo;
+        }
 
-        include '../../connect/connect.php';
-        $sql = $pdo->prepare("UPDATE `news` SET `article`=:article WHERE `id` = '$id' AND `login` = '$login'");
-        $params = ['article' => $article];
-        $sql->execute($params);
+        public function edit($id, $login, $article)
+        {
+            $sql = "UPDATE `news` SET `article`= :article WHERE `id` = :id AND `login` = :login";
+            $params = ['id' => $id, 'login' => $login, 'article' => $article];
+            $result = $this->connect->prepare($sql);
+            $result->execute($params);
+        }
     }
-    header("Location: /");
