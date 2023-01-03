@@ -1,33 +1,37 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 
-.header::after {
+  &::after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: rgba(161, 167, 185, 0.33);
     bottom: 0;
     left: 0;
+  }
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .log {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.log-item {
+  p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  &-item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,17 +43,13 @@
     font-weight: 400;
     text-align: center;
     border-radius: 5px;
-}
 
-.log-item:hover {
-    font-weight: 700;
-}
-
-.log p {
-    margin-left: 10px;
-    margin-right: 10px;
+    &:hover {
+      font-weight: 700;
+    }
+  }
 }
 
 .greet {
-    font-weight: 700;
+  font-weight: 700;
 }

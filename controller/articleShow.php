@@ -1,9 +1,20 @@
 <?php
-// ЦЕ ТРЕБА!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 include "./connect/connect.php";
 include "./model/articles/articleGet.php";
 $article = new ArticleGet($pdo);
+
+// echo "<pre>";
+// print_r($article);
+// echo "</pre>";
+
+
 $listArticles = $article->get();
+
+// echo "<pre>";
+// print_r($listArticles);
+// echo "</pre>";
+
 ?>
 
 
