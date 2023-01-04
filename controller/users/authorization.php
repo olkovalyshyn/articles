@@ -1,35 +1,27 @@
 <?php
-include "../../connect/connect.php";
-include "../../model/users/authorization.php";
+$user = new UserAuth();
+$user->authorization();
 
-$login = $_POST['login'];
-$password = $_POST['password'];
-$password = md5($password);
+class UserAuth
+{
+    public function authorization()
+    {
+        include "../../connect/connect.php";
+        include "../../model/users/authorization.php";
 
-// echo $login . "<br>";
-// echo $password . "<br>";
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $password = md5($password);
 
-$user = new UserAuth($pdo);
-$result = $user->authorization($login, $password);
-$authuser = $result->fetch(PDO::FETCH_ASSOC);
+        $user = new model\users\UserAuth($pdo);
+        $result = $user->authorization($login, $password);
+        $authuser = $result->fetch(PDO::FETCH_ASSOC);
 
-// $result = $authuser->fetch_assoc();
-// echo "!!!result: " . $authuser;
-// echo "<pre>";
-// print_r($authuser);
-// echo "<pre>";
-
-// while ($row = $authuser->fetch(PDO::FETCH_ASSOC)) {
-//     echo $row["login"];
-// }
-
-// echo "!!!result: " . $authuser->fetch_assoc();
-if ($authuser['login']) {
-    setcookie('user', $authuser['login'], time() + 3600 * 24, "/");
-    header('Location: /');
-} else {
-    include "../../view/users/userNotFound.html";
+        if ($authuser['login']) {
+            setcookie('user', $authuser['login'], time() + 3600 * 24, "/");
+            header('Location: /');
+        } else {
+            include "../../view/users/userNotFound.html";
+        }
+    }
 }
-
-
-// $connect->close();

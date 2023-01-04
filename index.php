@@ -18,8 +18,8 @@
     </header>
 
     <?php
-    include "./controller/showArticleAdd.php";
-    include "./controller/articleShow.php"
+    include "./controller/articles/showArticleAdd.php";
+    include "./controller/articles/articleShow.php"
     ?>
 
 </body>
