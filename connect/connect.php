@@ -1,10 +1,17 @@
-       <?php
-       $host = "localhost";
-       $dbname = "news-php";
-       $username = "root";
-       $password = "";
-       $charset = "utf8";
+<?php
+class ConnectionDb
+{
+       private $host = "localhost";
+       private $dbname = "news-php";
+       private $username = "root";
+       private $password = "";
 
-       $dsn = "mysql:host=$host; dbname=$dbname; charset=$charset";
 
-       $pdo = new PDO($dsn, $username, $password);
+       protected function connect()
+       {
+              $dsn = "mysql:host=$this->host; dbname=$this->dbname";
+              $pdo = new PDO($dsn, $this->username, $this->password);
+              $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+              return $pdo;
+       }
+}

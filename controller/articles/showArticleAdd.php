@@ -1,5 +1,4 @@
 <?php
-
 $article = new showArticleAdd();
 $article->showForm();
 

@@ -1,3 +1,7 @@
+const openAction = new PopupActions();
+openAction.open();
+openAction.close();
+
 class PopupActions {
   constructor() {
     this.popup = document.querySelector(".popup");
@@ -22,7 +26,3 @@ class PopupActions {
     });
   }
 }
-
-const openAction = new PopupActions();
-openAction.open();
-openAction.close();

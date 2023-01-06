@@ -7,7 +7,7 @@ class ArticleSet
     public function set()
     {
         include "../../connect/connect.php";
-        include "../../model/articles/articleSet.php";
+        include "../../vendor/autoload.php";
 
         if (
             isset($_POST["submitAddArticle"]) &&
@@ -19,8 +19,8 @@ class ArticleSet
             $article = $_POST['article'];
             $article = htmlspecialchars($article);
 
-            $article = new model\articles\ArticleSet($pdo);
-            $result = $article->set($login, $article);
+            $news = new model\articles\ArticleSet();
+            $news->set($login, $article);
 
             header("Location: /");
         }

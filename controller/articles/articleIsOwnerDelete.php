@@ -1,5 +1,4 @@
 <?php
-
 $article = new ArticleDelete();
 $article->delete();
 
@@ -8,7 +7,6 @@ class ArticleDelete
     public function delete()
     {
         include "../../connect/connect.php";
-        // include "../../model/articles/articleDelete.php";
         include "../../vendor/autoload.php";
         $id = $_POST['id'];
         $loginWhichAddArticle = $_POST['loginWhichAddArticle'];

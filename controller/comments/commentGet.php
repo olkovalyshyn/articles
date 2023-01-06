@@ -1,17 +1,14 @@
 <?php
-
-$comment = new CommentGet();
-$comment->get();
+$notice = new CommentGet();
+$notice->get();
 
 class CommentGet
 {
     public function get()
     {
         include "../../connect/connect.php";
-        // include "../../model/comments/commentGet.php";
-        include realpath("vendor/autoload.php");
-
-        $comment = new \model\comments\CommentGet($pdo);
+        include "../../vendor/autoload.php";
+        $comment = new \model\comments\CommentGet();
         $result = $comment->get();
         while ($row = $result->fetch_assoc()) {
             include "../../view/comments/commentGetParagraph.php";
