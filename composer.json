@@ -1,0 +1,16 @@
+{
+    "name": "user/articles",
+    "autoload": {
+        "psr-4": {
+            "model\\": "model/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Olexandr Kovalyshyn",
+            "email": "kovalyshyn@gmail.com"
+        }
+    ],
+    "require": {}
+}
+    
